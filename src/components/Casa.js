@@ -4,14 +4,15 @@ class Casa extends Component {
   constructor(props){
     super(props);
     this.state = {
-      marca: ""
+      marca: "",
+      tag: this.props.tag
     }
-    this.onClick = this.onClick.bind(this);
   }
 
   onClick = () => {
     if(this.state.marca === ""){
       this.setState({marca: this.props.marca});
+      this.props.onClick(this.state.tag);
     }
   }
 
